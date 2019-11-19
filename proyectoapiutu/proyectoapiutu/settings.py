@@ -39,7 +39,25 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'phone',
     'rest_framework',
+    'django_framework.authtoken',
+    'django.contrib.sites',
+    'rest_auth',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
 ]
+
+# SITIO CREADO POR DEFECTO
+SITE_ID = 1
+
+# PARA QUE FUNCIONE EL PROCESO DE REGISTRO
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.TokenAuthentication',),
+    'PAGE_SIZE': 10
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
