@@ -38,22 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'phone',
-    'rest_framework',
-    'django_framework.authtoken',
-    'django.contrib.sites',
-    'rest_auth',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'rest_auth.registration',
-    'django_framework',
 ]
-
-# SITIO CREADO POR DEFECTO
-SITE_ID = 1
-
-# PARA QUE FUNCIONE EL PROCESO DE REGISTRO
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
