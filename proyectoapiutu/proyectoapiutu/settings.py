@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'phone',
     'rest_framework',
     'oauth2_provider',
+    'users',
 ]
 
 MIDDLEWARE = [
