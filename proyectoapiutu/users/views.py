@@ -27,7 +27,7 @@ def register(request):
         serializer.save() 
         # Then we get a token for the created user.
         # This could be done differentley 
-        r = requests.post('http://127.0.0.1:8000/o/token/', 
+        r = requests.post('http://127.0.0.1:8000/authentication/register/', 
             data={
                 'grant_type': 'password',
                 'username': request.data['username'],
@@ -49,7 +49,7 @@ def token(request):
     {"username": "username", "password": "1234abcd"}
     '''
     r = requests.post(
-    'http://127.0.0.1:8000/o/token/', 
+    'http://127.0.0.1:8000/authentication/register/', 
         data={
             'grant_type': 'password',
             'username': request.data['username'],
@@ -70,7 +70,7 @@ def refresh_token(request):
     {"refresh_token": "<token>"}
     '''
     r = requests.post(
-    'http://127.0.0.1:8000/o/token/', 
+    'http://127.0.0.1:8000/authentication/token/refresh/', 
         data={
             'grant_type': 'refresh_token',
             'refresh_token': request.data['refresh_token'],
@@ -89,7 +89,7 @@ def revoke_token(request):
     {"token": "<token>"}
     '''
     r = requests.post(
-        'http://127.0.0.1:8000/o/revoke_token/', 
+        'http://127.0.0.1:8000/authentication/token/revoke/', 
         data={
             'token': request.data['token'],
             'client_id': CLIENT_ID,
