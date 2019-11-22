@@ -49,7 +49,7 @@ def token(request):
     {"username": "username", "password": "1234abcd"}
     '''
     r = requests.post(
-    'http://127.0.0.1:8000/authentication/register/', 
+    'http://127.0.0.1:8000/o/token/', 
         data={
             'grant_type': 'password',
             'username': request.data['username'],
@@ -70,7 +70,7 @@ def refresh_token(request):
     {"refresh_token": "<token>"}
     '''
     r = requests.post(
-    'http://127.0.0.1:8000/authentication/token/refresh/', 
+    'http://127.0.0.1:8000//o/token/', 
         data={
             'grant_type': 'refresh_token',
             'refresh_token': request.data['refresh_token'],
@@ -89,7 +89,7 @@ def revoke_token(request):
     {"token": "<token>"}
     '''
     r = requests.post(
-        'http://127.0.0.1:8000/authentication/token/revoke/', 
+        'http://127.0.0.1:8000/o/revoke_token/', 
         data={
             'token': request.data['token'],
             'client_id': CLIENT_ID,
